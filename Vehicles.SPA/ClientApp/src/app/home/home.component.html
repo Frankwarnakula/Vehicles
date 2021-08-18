@@ -1,0 +1,81 @@
+
+<div class="container">
+
+  <h1 id="tableLabel">Add a Vehicle</h1>
+  <div class="status" *ngIf="status"> {{status}}</div>
+  <div class="error" *ngIf="error"> {{error}}</div>
+  <hr />
+
+  <form>
+
+    <div class="form-group control-group">
+      <div>
+        <div>Select Vehicle Type</div>
+      </div>
+      <div>
+        <select name="vehicleType" id="vehicleType">
+          <option value="car">Car</option>
+          <option value="bike" disabled>Bike</option>
+          <option value="boat" disabled>Boat</option>
+        </select>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="form-group control-group">
+      <div>
+        <label for="make">Make:</label>
+      </div>
+      <div>
+        <input type="text" id="make" name="make" value="Toyota" [(ngModel)]="make" required>
+      </div>
+    </div>
+
+    <div class="form-group control-group">
+      <div>
+        <label for="model">Model:</label>
+      </div>
+      <div>
+        <input type="text" id="model" name="model" value="Corolla" [(ngModel)]="model" required>
+      </div>
+    </div>
+
+    <div class="form-group control-group">
+      <div>
+        <label for="bodyType">Body Type:</label>
+      </div>
+      <div>
+        <select name="bodyType" id="bodyType" [(ngModel)]="bodyType" required>
+          <option value="1">Sedan</option>
+          <option value="0">Hatchback</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group control-group">
+      <div>
+        <label for="numberOfDoors">Number of Doors:</label>
+      </div>
+      <div>
+        <input type="number" id="numberOfDoors" name="numberOfDoors"
+               min="1" max="10" value="4" [(ngModel)]="numberOfDoors" required>
+      </div>
+    </div>
+
+    <div class="form-group control-group">
+      <div>
+        <label for="numberOfWheels">Number of Wheels:</label>
+      </div>
+      <div>
+        <input type="number" id="numberOfWheels" name="numberOfWheels"
+               min="4" max="10" value="4" [(ngModel)]="numberOfWheels" required>
+      </div>
+    </div>
+    <button type="button" (click)="addCar()">Add Vehicle</button>
+
+  </form>
+
+</div>
+
+
